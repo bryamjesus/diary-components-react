@@ -1,4 +1,5 @@
-const Card = (props) => {
+const Card = ({datos}) => {
+console.log(datos)
   return (
     <div className='col-md-6'>
       <div className="card mb-3">
@@ -12,16 +13,16 @@ const Card = (props) => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">{props.nombres} {props.apellidos}</h5>
+              <h5 className="card-title">{datos.nombres} {datos.apellidos}</h5>
               <div className="card-text">
                 <p >
-                  <i className="bi bi-telephone-fill"></i> {props.telefono}
+                  <i className="bi bi-telephone-fill"></i> {datos.telefono}
                 </p>
                 <p >
-                  <i className="bi bi-envelope-fill"></i> {props.email}
+                  <i className="bi bi-envelope-fill"></i> {datos.email}
                 </p>
                 <p >
-                  <i className="bi bi-house-fill"></i> {props.direccion}
+                  <i className="bi bi-house-fill"></i> {datos.direccion}
                 </p>
               </div>
             </div>
