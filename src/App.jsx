@@ -1,8 +1,15 @@
+import { useRef } from 'react'
 import Cabecera from './components/Cabecera'
 import Card from './components/Card'
 import { data } from './data/contacto'
 
 const App = () => {
+  const inputSearch = useRef()
+  const handleSearch = () => {
+    const text = inputSearch.current.value
+    console.log(text)
+  }
+
   return (
     <div>
       <Cabecera />
@@ -12,8 +19,8 @@ const App = () => {
           <div className='col-md-8'>
             <h3>Lista de contáctos</h3>
             <div className="input-group mb-3">
-              <input type="text" className="form-control" placeholder="Buscar por nombre..." />
-              <button className="btn btn-secondary" type="button">Buscar</button>
+              <input ref={inputSearch} type="text" className="form-control" placeholder="Buscar por nombre..." />
+              <button onClick={handleSearch} className="btn btn-secondary" type="button">Buscar</button>
             </div>
             <div className='row'>
               {data.map((x) => (
