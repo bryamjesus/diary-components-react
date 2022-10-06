@@ -1,5 +1,6 @@
-const Card = ({datos}) => {
-console.log(datos)
+const Card = ({ datos, fnEdit, fnDelete }) => {
+  console.log(datos)
+  console.log(fnEdit)
   return (
     <div className='col-md-6'>
       <div className="card mb-3">
@@ -7,8 +8,8 @@ console.log(datos)
           <div className="col-md-4">
             <img src="https://rickandmortyapi.com/api/character/avatar/250.jpeg" className="img-fluid rounded-start" alt="..." />
             <div className='d-flex justify-content-around'>
-              <button className='btn btn-secondary'><i className="bi bi-pencil-square"></i></button>
-              <button className='btn btn-danger'><i className="bi bi-trash"></i></button>
+              <button onClick={() => fnEdit(datos.id)} className='btn btn-secondary'><i className="bi bi-pencil-square"></i></button>
+              <button onClick={() => fnDelete(datos.id)} className='btn btn-danger'><i className="bi bi-trash"></i></button>
             </div>
           </div>
           <div className="col-md-8">

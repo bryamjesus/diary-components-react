@@ -10,6 +10,14 @@ const App = () => {
     console.log(text)
   }
 
+  const handleEdit = (id) => {
+    console.log(id)
+  }
+
+  const handleDelete = (id) => {
+    console.log(id)
+  }
+
   return (
     <div>
       <Cabecera />
@@ -24,7 +32,7 @@ const App = () => {
             </div>
             <div className='row'>
               {data.map((x) => (
-                <Card key={x.id} datos={x} />
+                <Card key={x.id} datos={x} fnEdit={handleEdit} fnDelete={handleDelete} />
               ))}
             </div>
           </div>
